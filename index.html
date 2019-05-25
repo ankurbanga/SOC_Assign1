@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Simple Window</title>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+        <h2 align="center">My First Sub-Window</h2>
+        <br>
+        <br>
+        <div id="main">
+            <object id="obj" height="100%" width="100%" type="text/html" data="https://www.bing.com"></object>
+        </div>
+        <br>
+        <br>
+        <p align="center">
+        Enter URL: <input type="text" id="url">
+        <button id="btn" onclick="gotourl()">GO!</button>
+        <br>
+        <br>
+        Height <input type="text" id="ht">px
+        <br>
+        <br>
+        Width <input type="text"  id="wd">px
+        <br>
+        <br>
+        <button id="btn2" onclick="resize()">Resize!</button>
+        </p>
+        <script>
+            function gotourl(){
+                var website=document.getElementById("url");
+                document.getElementById("obj").setAttribute("data",website.value);
+                website.value="";
+            }
+            function resize(){
+                var dimensions=document.getElementById("main");
+                var height=document.getElementById("ht");
+                var width=document.getElementById("wd");
+                dimensions.style.height=height.value;
+                dimensions.style.width=width.value;
+                height.value="";
+                width.value="";
+            }
+        </script>
+    </body>
+</html>
